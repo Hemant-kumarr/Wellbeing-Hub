@@ -153,7 +153,21 @@ nav ul li a:hover{
     background: #FF6B6B;
     color: white;
 }
-
+.service-box{
+    text-align: center;
+    
+}
+/* #serv1{
+    
+    content:url(/food1.png);
+} */
+/* .image1{
+    
+    height: 40%;
+}
+div.image1{
+    content:url(/food1.png);
+} */
 /* Footer */
 footer {
     background-color: #2C6E49;
@@ -233,3 +247,4 @@ footer {
         padding: 8%;
     }
 }
+

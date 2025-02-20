@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F8F9FA;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: #52B788;
+    color: white;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #FFDD57;
+}
+
+/* Services Section */
+.services-section {
+    padding: 100px 5% 50px;
+}
+
+h1 {
+    color: #2C6E49;
+    font-size: 36px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+}
+
+/* Services Container */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Service Box */
+.service-box {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
+    text-align: center;
+}
+
+.service-box i {
+    font-size: 40px;
+    color: #52B788;
+    margin-bottom: 15px;
+}
+
+.service-box h2 {
+    font-size: 22px;
+    color: #2C6E49;
+    margin-bottom: 10px;
+}
+
+.service-box p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Hover Effect */
+.service-box:hover {
+    transform: translateY(-5px);
+    background: #FF6B6B;
+    color: white;
+}
+
+.service-box:hover i,
+.service-box:hover h2,
+.service-box:hover p {
+    color: white;
+}
+
+/* Footer */
+footer {
+    background-color: #2C6E49;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    position: relative;
+    margin-top: 50px;
+}
