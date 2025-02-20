@@ -48,7 +48,9 @@ nav ul li a {
     font-weight: 500;
     font-size: 1.2vw;
 }
-
+nav ul li a:hover{
+    color: #FFDD57;
+}
 .search-bar {
     display: flex;
     align-items: center;
@@ -82,16 +84,16 @@ nav ul li a {
 
 
 /* Authentication Links */
-.auth-links {
+/* .auth-links {
     display: flex;
     gap: 5%;
-}
+} */
 
 .auth-links a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 100%;
+    font-size: 1.2vw;
     transition: color 0.3s;
 }
 

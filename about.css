@@ -49,6 +49,9 @@ nav ul li a {
     font-weight: 500;
     font-size: 1.2vw;
 }
+nav ul li a:hover{
+    color: #FFDD57;
+}
 
 .search-bar {
     display: flex;
@@ -79,6 +82,9 @@ nav ul li a {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.2vw;
+}
+.auth-links a:hover {
+    color: #FFDD57;
 }
 
 /* Hero Section */
