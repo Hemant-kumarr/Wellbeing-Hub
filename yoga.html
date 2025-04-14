@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="yoga.css">
 </head>
 <body>
-
-    <!-- Header -->
     <header>
         <div class="logo">Wellbeing Hub</div>
         <nav>
@@ -27,41 +25,67 @@
         </div>
     </header>
 
-    <!-- Main Selection Area -->
     <div class="container">
-        <h1>Select Your Yoga Preferences</h1>
+        <h1>Select Your Yoga Plan</h1>
 
-        <!-- Step 1: Yoga Level Selection -->
+        <!-- Experience Level -->
         <section class="selection">
             <h2>Choose Your Experience Level</h2>
-            <div class="options">
-                <div class="option-box">Beginner</div>
-                <div class="option-box">Intermediate</div>
-                <div class="option-box">Advanced</div>
+            <div class="options" id="level-options">
+                <div class="option-box" data-level="beginner">Beginner</div>
+                <div class="option-box" data-level="intermediate">Intermediate</div>
+                <div class="option-box" data-level="advanced">Advanced</div>
             </div>
         </section>
 
-        <!-- Step 2: Yoga Type Selection -->
+        <!-- Yoga Type -->
         <section class="selection">
-            <h2>Pick a Yoga Style</h2>
-            <div class="options">
-                <div class="option-box">Mindfulness & Relaxation</div>
-                <div class="option-box">Flexibility & Stretching</div>
-                <div class="option-box">Strength & Enduranc</div>
-                <div class="option-box">Balance & Stability</div>
-                <div class="option-box">Spiritual Growth & Meditation</div>
-                <div class="option-box">High Energy & Detoxification</div>
+            <h2>Choose Yoga Style</h2>
+            <div class="options" id="type-options">
+                <div class="option-box" data-type="relaxation">Mindfulness & Relaxation</div>
+                <div class="option-box" data-type="flexibility">Flexibility & Stretching</div>
+                <div class="option-box" data-type="strength">Strength & Endurance</div>
+                <div class="option-box" data-type="balance">Balance & Stability</div>
+                <div class="option-box" data-type="spiritual">Spiritual Growth & Meditation</div>
+                <div class="option-box" data-type="detox">High Energy & Detoxification</div>
             </div>
         </section>
 
-        <!-- Proceed Button -->
-        <button class="proceed-btn">Continue</button>
+        <button class="proceed-btn" id="continueBtn">Continue</button>
     </div>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Wellbeing Hub. All Rights Reserved.</p>
     </footer>
 
+    <script>
+        let selectedLevel = "";
+        let selectedType = "";
+
+        document.querySelectorAll('#level-options .option-box').forEach(box => {
+            box.addEventListener('click', () => {
+                selectedLevel = box.dataset.level;
+                document.querySelectorAll('#level-options .option-box').forEach(b => b.classList.remove('active'));
+                box.classList.add('active');
+            });
+        });
+
+        document.querySelectorAll('#type-options .option-box').forEach(box => {
+            box.addEventListener('click', () => {
+                selectedType = box.dataset.type;
+                document.querySelectorAll('#type-options .option-box').forEach(b => b.classList.remove('active'));
+                box.classList.add('active');
+            });
+        });
+
+        document.getElementById('continueBtn').addEventListener('click', () => {
+            if (selectedLevel && selectedType) {
+                const url = `${selectedLevel}-${selectedType}.html`;
+                window.location.href = url;
+            } else {
+                alert("Please select both level and yoga style.");
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,62 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exercise Selection</title>
-    <link rel="stylesheet" href="exercise.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <title>Wellbeing Hub</title>
+  <link rel="stylesheet" href="exercise.css">
 </head>
 <body>
+  <nav class="navbar">
+    <div class="logo">Wellbeing Hub</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Yoga</a></li>
+      <li><a href="#">Exercise</a></li>
+      <li><a href="#">Nutrition</a></li>
+    </ul>
+  </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">Wellbeing Hub</div>
-        <nav>
-            <ul>
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/yoga.html">Yoga</a></li>
-                <li><a href="#">Exercise</a></li>
-                <li><a href="#">Nutrition</a></li>
-                <li><a href="/contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="main-container">
+    <h1>Choose Your Workout Plan</h1>
+    <p>Select your exercise goal and type of workout.</p>
 
-    <!-- Exercise Selection Section -->
-    <section class="exercise-selection">
-        <h1>Choose Your Workout Plan</h1>
-        <p>Select your exercise goal and type of workout.</p>
+    <div class="selector-row">
+      <div class="selector-box">
+        <h2>Workout Type</h2>
+        <select id="workoutType">
+          <option value="abs">6-Pack Abs</option>
+          <option value="fullbody">Full Body Workout</option>
+          <option value="weightloss">Weight Loss</option>
+          <option value="musclegain">Muscle Gain</option>
+          <option value="legs">Legs Workout</option>
+          <option value="arms">Arms & Shoulders</option>
+        </select>
+      </div>
 
-        <div class="options-container">
-            <div class="exercise-option">
-                <h2>Workout Type</h2>
-                <select>
-                    <option value="full-body">Full Body Workout</option>
-                    <option value="six-pack">6-Pack Abs</option>
-                    <option value="weight-loss">Weight Loss</option>
-                    <option value="muscle-gain">Muscle Gain</option>
-                    <option value="legs">Legs Workout</option>
-                    <option value="arms">Arms & Shoulders</option>
-                </select>
-            </div>
+      <div class="selector-box">
+        <h2>Workout Place</h2>
+        <select id="workoutPlace">
+          <option value="gym">Gym Workout</option>
+          <option value="home">Home Workout</option>
+        </select>
+      </div>
+    </div>
 
-            <div class="exercise-option">
-                <h2>Workout Place</h2>
-                <select>
-                    <option value="home">Home Workout</option>
-                    <option value="gym">Gym Workout</option>
-                </select>
-            </div>
-        </div>
+    <button class="start-btn" onclick="startWorkout()">Start Workout</button>
+  </div>
 
-        <button class="start-btn">Start Workout</button>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Wellbeing Hub All Rights Reserved.</p>
-    </footer>
-
+  <script src="script.js"></script>
 </body>
 </html>

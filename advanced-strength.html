@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advanced Yoga - Strength</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #F0FAF4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #52B788, #40916C);
+      color: white;
+      padding: 1.5% 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8vw;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2.5vw;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1vw;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #D8F3DC;
+    }
+
+    .container {
+      width: 85%;
+      margin: 3% auto;
+      padding: 2%;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+
+    h1 {
+      color: #1B4332;
+      font-size: 2.4vw;
+      margin-bottom: 1%;
+    }
+
+    .intro {
+      font-size: 1.2vw;
+      color: #444;
+      margin-bottom: 3%;
+    }
+
+    .pose-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3%;
+      justify-content: center;
+    }
+
+    .pose-card {
+      width: 250px;
+      background: #E9F5EF;
+      border: 2px solid #52B788;
+      border-radius: 16px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: 0.3s ease;
+    }
+
+    .pose-card img {
+      width: 100%;
+      border-radius: 12px;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .pose-card h3 {
+      color: #1B4332;
+      margin-top: 12px;
+    }
+
+    .pose-card p {
+      font-size: 0.95vw;
+      color: #444;
+    }
+
+    .tips {
+      margin-top: 5%;
+      padding: 2%;
+      background: #D8F3DC;
+      border-left: 5px solid #52B788;
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .tips h2 {
+      color: #1B4332;
+      font-size: 1.6vw;
+    }
+
+    .tips ul {
+      padding-left: 20px;
+      font-size: 1vw;
+      color: #333;
+    }
+
+    .buttons {
+      margin: 2% 0;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 1vw;
+      margin: 0 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #52B788;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #40916C;
+    }
+
+    .timer {
+      font-size: 2vw;
+      font-weight: bold;
+      color: #1B4332;
+      margin: 10px 0;
+    }
+
+    footer {
+      background-color: #1B4332;
+      color: white;
+      text-align: center;
+      padding: 1.5%;
+      font-size: 1vw;
+      margin-top: 4%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Wellbeing Hub</div>
+    <nav>
+      <ul>
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/yoga.html">Yoga</a></li>
+        <li><a href="#">Meditation</a></li>
+        <li><a href="/services.html">Services</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Advanced Yoga - Strength</h1>
+    <p class="intro">Challenge your strength, balance, and control with these advanced poses.</p>
+
+    <div class="buttons">
+      <button class="btn" onclick="startTimer()">Start</button>
+      <button class="btn" onclick="stopTimer()">Stop</button>
+      <button class="btn" onclick="resetTimer()">Reset</button>
+      <div class="timer" id="timer">00:00</div>
+    </div>
+
+    <div class="pose-grid">
+      <div class="pose-card">
+        <img src="firefly.png" alt="Firefly Pose">
+        <h3>Firefly Pose (Tittibhasana)</h3>
+        <p>Improves arm strength, core engagement, and inner thigh flexibility.</p>
+      </div>
+
+      <div class="pose-card">
+        <img src="crow.png" alt="Side Crow Pose">
+        <h3>Side Crow (Parsva Bakasana)</h3>
+        <p>Builds strong obliques, balance, and upper-body control.</p>
+      </div>
+
+      <div class="pose-card">
+        <img src="handstandnew.png" alt="Handstand">
+        <h3>Handstand (Adho Mukha Vrksasana)</h3>
+        <p>Ultimate strength pose, enhances shoulder stability and core power.</p>
+      </div>
+      <div class="pose-card">
+        <img src="eight.png" alt="Eight-Angle Pose">
+        <h3>Eight-Angle Pose (Astavakrasana)</h3>
+        <p>Demands total-body strength and flexibility, especially core and arms.</p>
+      </div>
+    
+      <div class="pose-card">
+        <img src="foreremnew.png" alt="Forearm Stand">
+        <h3>Forearm Stand (Pincha Mayurasana)</h3>
+        <p>Strengthens shoulders, arms, and improves body alignment awareness.</p>
+      </div>
+    </div>
+
+    <div class="tips">
+      <h2>Strength Practice Tips:</h2>
+      <ul>
+        <li>Warm up your wrists, shoulders, and core before advanced postures.</li>
+        <li>Use a wall or props if needed for support during balance poses.</li>
+        <li>Focus on your breath to stay stable and calm.</li>
+        <li>Train consistently and give your body recovery time.</li>
+      </ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Wellbeing Hub. All rights reserved.</p>
+  </footer>
+
+  <script>
+    let timerInterval;
+    let seconds = 0;
+
+    function updateTimerDisplay() {
+      const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      document.getElementById('timer').innerText = `${mins}:${secs}`;
+    }
+
+    function startTimer() {
+      if (!timerInterval) {
+        timerInterval = setInterval(() => {
+          seconds++;
+          updateTimerDisplay();
+        }, 1000);
+      }
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+
+    function resetTimer() {
+      stopTimer();
+      seconds = 0;
+      updateTimerDisplay();
+    }
+  </script>
+
+</body>
+</html>
