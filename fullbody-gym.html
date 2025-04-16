@@ -3,188 +3,252 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Full Body - Gym Workout</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <title>Full Body Gym Workout</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f0f4f8;
-      color: #333;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0fbf5;
+      color: #113c2d;
+    }
+
     header {
-      background: #28a745;
+      background: linear-gradient(to right, #52B788, #40916C);
+      color: #fff;
+      padding: 1.5% 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 28px;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .timer-controls {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .timer-controls button {
+      background-color: #3cb371;
       color: white;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 2.5rem;
-    }
-    .controls {
-      text-align: center;
-      margin: 20px;
-    }
-    select, button {
-      padding: 10px 15px;
-      font-size: 1rem;
-      margin: 0 10px;
       border: none;
-      border-radius: 5px;
-      background-color: #28a745;
-      color: white;
+      padding: 10px 18px;
+      font-size: 16px;
+      margin: 0 8px;
+      border-radius: 8px;
       cursor: pointer;
     }
-    button:hover {
-      background-color: #218838;
+
+    .timer {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 30px;
     }
-    #clock {
-      font-size: 2rem;
-      margin-top: 10px;
-    }
-    .exercise-container {
+
+    .cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      width: 250px;
+      background-color: #e6f8ec;
+      border: 1px solid #90d7b7;
+      border-radius: 16px;
       padding: 20px;
-    }
-    .exercise-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      overflow: hidden;
       text-align: center;
-      max-width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
-    .exercise-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+
+    .card:hover {
+      transform: scale(1.03);
     }
-    .exercise-card h3 {
-      margin: 10px 0 5px;
-      color: #28a745;
+
+    .card img {
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 15px;
     }
-    .exercise-card p {
-      padding: 0 10px 15px;
-      font-size: 0.95rem;
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      font-weight: 600;
     }
-    .instructions {
-      max-width: 800px;
-      margin: 40px auto;
-      background-color: #e6ffee;
-      padding: 25px;
-      border-radius: 15px;
-      font-size: 1.1rem;
-      line-height: 1.6;
+
+    .card p {
+      font-size: 15px;
+      color: #333;
     }
-    .instructions ul {
-      padding-left: 20px;
+
+    .tips {
+      background-color: #d8f5dd;
+      border-left: 5px solid #3cb371;
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .tips h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .tips ul {
+      list-style: disc;
+      margin-left: 20px;
+      line-height: 1.8;
+    }
+
+    footer {
+      background-color: #1e4d3a;
+      padding: 30px;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
 
-  <header>Full Body - Gym Workout</header>
+  <header>
+    <h1>Wellbeing Hub</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Yoga</a>
+      <a href="#">Meditation</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-  <div class="controls">
-    <label for="duration">Workout Duration (minutes):</label>
-    <select id="duration">
-      <option value="15">15</option>
-      <option value="20" selected>20</option>
-      <option value="30">30</option>
-    </select>
-    <button onclick="startTimer()">Start</button>
-    <button onclick="stopTimer()">Stop</button>
-    <button onclick="resetTimer()">Reset</button>
-    <div id="clock">00:00</div>
+  <div class="container">
+    <h2>Full Body Gym Workout</h2>
+    <p class="description">Power up your body with these effective exercises targeting all major muscle groups.</p>
+
+    <div class="timer-controls">
+      <button onclick="startTimer()">Start</button>
+      <button onclick="stopTimer()">Stop</button>
+      <button onclick="resetTimer()">Reset</button>
+    </div>
+
+    <div class="timer" id="timer">00:00</div>
+
+    <div class="cards">
+      <div class="card">
+        <img src="/bodyweight-squat.gif" alt="Squats">
+        <h3>Squats</h3>
+        <p>Build lower body strength and stability with this compound movement.</p>
+      </div>
+      <div class="card">
+        <img src="/push-up.gif" alt="Push-Ups">
+        <h3>Push-Ups</h3>
+        <p>Strengthen chest, triceps, and core with bodyweight power.</p>
+      </div>
+      <div class="card">
+        <img src="bodyweight-forward-lunge.gif" alt="Lunges">
+        <h3>Lunges</h3>
+        <p>Boost balance, coordination and leg muscle endurance.</p>
+      </div>
+      <div class="card">
+        <img src="barbell-deadlift-movement.gif" alt="Deadlift">
+        <h3>Deadlifts</h3>
+        <p>Full-body strength builder focusing on back, legs and core.</p>
+      </div>
+      <div class="card">
+        <img src="barbell-bench-press.gif" alt="Bench Press">
+        <h3>Bench Press</h3>
+        <p>Effective chest and tricep strength training move.</p>
+      </div>
+      <div class="card">
+        <img src="jumping-jacks.gif" alt="Jumping Jacks">
+        <h3>Jumping Jacks</h3>
+        <p>Boosts heart rate while engaging full-body muscles.</p>
+      </div>
+    </div>
+
+    <div class="tips">
+      <h3>Full Body Workout Tips:</h3>
+      <ul>
+        <li>Start with a 5–10 minute dynamic warm-up to prevent injuries.</li>
+        <li>Use proper form over heavier weights for effective gains.</li>
+        <li>Balance strength training with cardio for fat loss.</li>
+        <li>Stay consistent – track reps and rest to progress weekly.</li>
+        <li>Fuel your body with protein-rich meals post workout.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="exercise-container">
-    <div class="exercise-card">
-      <img src="barbell-full-squat.gif" alt="Squats">
-      <h3>Squats</h3>
-      <p>3 sets of 15 reps</p>
-    </div>
-    <div class="exercise-card">
-      <img src="push-up.gif" alt="Push Ups">
-      <h3>Push Ups</h3>
-      <p>3 sets of 12 reps</p>
-    </div>
-    <div class="exercise-card">
-      <img src="bodyweight-forward-lunge.gif" alt="Lunges">
-      <h3>Dumbbell Lunges</h3>
-      <p>3 sets of 10 reps per leg</p>
-    </div>
-    <div class="exercise-card">
-      <img src="barbell-deadlift-movement.gif" alt="Deadlifts">
-      <h3>Deadlifts</h3>
-      <p>3 sets of 8 reps</p>
-    </div>
-    <div class="exercise-card">
-      <img src="barbell-bench-press.gif" alt="Bench Press">
-      <h3>Bench Press</h3>
-      <p>3 sets of 10 reps</p>
-    </div>
-    <div class="exercise-card">
-      <img src="jumping-jacks.gif" alt="Jumping Jacks">
-      <h3>Jumping Jacks</h3>
-      <p>3 sets of 45 seconds</p>
-    </div>
-  </div>
-
-  <div class="instructions">
-    <p><strong>Instructions:</strong></p>
-    <ul>
-      <li>Warm up for 5 minutes before starting.</li>
-      <li>Follow the workout duration timer and complete all exercises listed.</li>
-      <li><strong>After each exercise, take a 30-second break</strong> to recover and hydrate.</li>
-      <li>Maintain proper posture and breathing throughout.</li>
-      <li>Cool down and stretch for 2–3 minutes after finishing to reduce muscle soreness.</li>
-      <li>Be consistent and listen to your body. Rest when needed.</li>
-    </ul>
-  </div>
+  <footer></footer>
 
   <script>
     let timer;
-    let time = 0;
-    let isRunning = false;
+    let seconds = 0;
+
+    function updateTimerDisplay() {
+      const mins = String(Math.floor(seconds / 60)).padStart(2, '0');
+      const secs = String(seconds % 60).padStart(2, '0');
+      document.getElementById("timer").textContent = `${mins}:${secs}`;
+    }
 
     function startTimer() {
-      if (!isRunning && time === 0) {
-        const minutes = parseInt(document.getElementById('duration').value);
-        time = minutes * 60;
-      }
-      if (!isRunning) {
+      if (!timer) {
         timer = setInterval(() => {
-          if (time > 0) {
-            time--;
-            updateClock();
-          } else {
-            clearInterval(timer);
-            alert("Workout complete!");
-          }
+          seconds++;
+          updateTimerDisplay();
         }, 1000);
-        isRunning = true;
       }
     }
 
     function stopTimer() {
       clearInterval(timer);
-      isRunning = false;
+      timer = null;
     }
 
     function resetTimer() {
-      clearInterval(timer);
-      time = 0;
-      updateClock();
-      isRunning = false;
-    }
-
-    function updateClock() {
-      const minutes = Math.floor(time / 60).toString().padStart(2, '0');
-      const seconds = (time % 60).toString().padStart(2, '0');
-      document.getElementById('clock').innerText = `${minutes}:${seconds}`;
+      stopTimer();
+      seconds = 0;
+      updateTimerDisplay();
     }
   </script>
 
