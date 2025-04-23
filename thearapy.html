@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wellbeing Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f2fcfb;
+      color: #014d40;
+    }
+
+    header {
+      background-color: #4fc08d;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+    }
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: white;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .main-content {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .therapy-session {
+      background: #fff;
+      border-radius: 10px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 90%;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .therapy-session h3 {
+      color: #018f6b;
+      margin-bottom: 10px;
+    }
+
+    .session-time {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    .join-button {
+      margin-top: 10px;
+      background-color: #4fc08d;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .join-button:hover {
+      background-color: #3aa977;
+    }
+
+    .therapists-section {
+      margin-top: 40px;
+      padding: 30px;
+    }
+
+    .therapists-section h2 {
+      margin-bottom: 20px;
+    }
+
+    .therapist-cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .therapist-card {
+      background: #fff;
+      border-radius: 15px;
+      width: 300px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .therapist-card img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .therapist-card h4 {
+      margin: 10px 0 5px;
+    }
+
+    .therapist-card p {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .contact-buttons {
+      margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .contact-button {
+      background-color: #4fc08d;
+      color: white;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #3aa977;
+    }
+
+    .more-sessions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .more-sessions button {
+      background-color: #4fc08d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .more-sessions button:hover {
+      background-color: #3aa977;
+    }
+
+    .see-all-button {
+      margin-top: 30px;
+    }
+
+    .see-all-button button {
+      background-color: #014d40;
+      color: white;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .see-all-button button:hover {
+      background-color: #012f28;
+    }
+
+    footer {
+      background-color: #4fc08d;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Wellbeing Hub</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="main-content">
+    <h2>🧘 Free Daily Therapy Sessions</h2>
+
+    <div class="therapy-session">
+      <h3>🌞 Morning Mindfulness</h3>
+      <p>Start your day with calm, clarity and breath-based awareness.</p>
+      <p class="session-time">🕘 9:00 AM - 9:30 AM</p>
+      <button class="join-button">Join</button>
+    </div>
+
+    <div class="therapy-session">
+      <h3>🧘 Midday Stress Relief</h3>
+      <p>Let go of mental tension and re-energize with practical exercises.</p>
+      <p class="session-time">🕛 12:00 PM - 12:30 PM</p>
+      <button class="join-button">Join</button>
+    </div>
+
+    <div class="therapy-session">
+      <h3>🌙 Sleep Relaxation</h3>
+      <p>Soothing techniques to help you unwind and sleep peacefully.</p>
+      <p class="session-time">🕗 8:00 PM - 8:30 PM</p>
+      <button class="join-button">Join</button>
+    </div>
+
+    <div class="more-sessions">
+      <button onclick="location.href='more-therapy-sessions.html'">See More Sessions</button>
+    </div>
+
+    <div class="therapists-section">
+      <h2>👩‍⚕️ Certified & Experienced Therapists</h2>
+      <div class="therapist-cards">
+        <!-- Cards remain the same -->
+        <div class="therapist-card">
+          <img src="/thearapist.png" alt="Dr. Meera Sharma">
+          <h4>Dr. Meera Sharma</h4>
+          <p>10+ Years Experience • Certified Psychologist</p>
+          <div class="contact-buttons">
+            <button class="contact-button">Contact Now</button>
+            <button class="contact-button">Message</button>
+          </div>
+        </div>
+        <div class="therapist-card">
+          <img src="/thearapist.png" alt="Dr. Arjun Verma">
+          <h4>Dr. Arjun Verma</h4>
+          <p>8 Years Experience • Clinical Counselor</p>
+          <div class="contact-buttons">
+            <button class="contact-button">Contact Now</button>
+            <button class="contact-button">Message</button>
+          </div>
+        </div>
+        <div class="therapist-card">
+          <img src="/thearapist.png" alt="Dr. Priya Nair">
+          <h4>Dr. Priya Nair</h4>
+          <p>12+ Years Experience • Mental Health Expert</p>
+          <div class="contact-buttons">
+            <button class="contact-button">Contact Now</button>
+            <button class="contact-button">Message</button>
+          </div>
+        </div>
+        <div class="therapist-card">
+          <img src="/thearapist.png" alt="Dr. Ankit Joshi">
+          <h4>Dr. Ankit Joshi</h4>
+          <p>7 Years Experience • Certified Life Coach</p>
+          <div class="contact-buttons">
+            <button class="contact-button">Contact Now</button>
+            <button class="contact-button">Message</button>
+          </div>
+        </div>
+        <div class="therapist-card">
+          <img src="/thearapist.png" alt="Dr. Sneha Desai">
+          <h4>Dr. Sneha Desai</h4>
+          <p>9 Years Experience • Yoga & Mindfulness Expert</p>
+          <div class="contact-buttons">
+            <button class="contact-button">Contact Now</button>
+            <button class="contact-button">Message</button>
+          </div>
+        </div>
+      </div>
+      <div class="see-all-button">
+        <button onclick="location.href='all-therapists.html'">See All Therapists</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Wellbeing Hub. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>

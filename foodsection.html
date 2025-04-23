@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wellbeing Hub - Food Selection</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f2f7f5;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2rem;
+      background-color: #52B788;
+      color: white;
+    }
+
+    .header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .search-bar input {
+      padding: 0.5rem;
+      border-radius: 20px;
+      border: none;
+      width: 200px;
+    }
+
+    .cart-icon {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .cart-icon span {
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      font-size: 0.8rem;
+    }
+
+    .section {
+      padding: 1rem 2rem;
+    }
+
+    .section h2 {
+      margin-bottom: 0.5rem;
+    }
+
+    .food-container {
+      display: flex;
+      overflow-x: auto;
+      padding: 1rem 0;
+    }
+
+    .food-card {
+      background-color: #d2f0ec;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-right: 1rem;
+      min-width: 160px;
+      text-align: center;
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .food-card img {
+      width: 100px;
+      height: 80px;
+      object-fit:cover;
+      border-radius: 8px;
+      background: #ccc;
+    }
+
+    .food-card h4 {
+      margin: 0.5rem 0;
+    }
+
+    .add-btn {
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      width: 300px;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .modal-content h3 {
+      margin-top: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">Wellbeing Hub</div>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search food...">
+    </div>
+    <div class="cart-icon" onclick="toggleCart()">
+      🛒 <span id="cartCount">0</span>
+    </div>
+  </div>
+
+  <div id="foodSections"></div>
+
+  <div class="modal" id="cartModal">
+    <div class="modal-content">
+      <h3>Cart Items</h3>
+      <ul id="cartItems"></ul>
+    </div>
+  </div>
+
+  <script>
+    const foodData = {
+      Salads: [
+        { name: 'Greek Salad', image: 'greeksalad.png' },
+        { name: 'Avocado Salad', image: '' },
+        { name: 'Veggie Mix', image: '' },
+        { name: 'Cucumber Delight', image: '' },
+        { name: 'Spinach & Beet', image: '' },
+        { name: 'Tomato Tango', image: '' },
+        { name: 'Chickpea Crunch', image: '' },
+        { name: 'Rainbow Bowl', image: '' },
+        { name: 'Lettuce Wrap', image: '' },
+        { name: 'Broccoli Blast', image: '' }
+      ],
+      Fruits: [
+        { name: 'Apple Slices', image: '' },
+        { name: 'Banana Bites', image: '' },
+        { name: 'Mango Cubes', image: '' },
+        { name: 'Papaya Bowl', image: '' },
+        { name: 'Kiwi Cuties', image: '' },
+        { name: 'Grapes Mix', image: '' },
+        { name: 'Pomegranate Seeds', image: '' },
+        { name: 'Pineapple Rings', image: '' },
+        { name: 'Strawberry Hearts', image: '' },
+        { name: 'Fruit Cocktail', image: '' }
+      ],
+      'Gym Workout Foods': [
+        { name: 'Protein Bar', image: '' },
+        { name: 'Whey Shake', image: '' },
+        { name: 'Boiled Eggs', image: '' },
+        { name: 'Chicken Breast', image: '' },
+        { name: 'Peanut Butter Toast', image: '' },
+        { name: 'Oats Bowl', image: '' },
+        { name: 'Sweet Potato', image: '' },
+        { name: 'Greek Yogurt', image: '' },
+        { name: 'Cottage Cheese', image: '' },
+        { name: 'Energy Bites', image: '' }
+      ]
+    };
+
+    const cart = [];
+
+    const renderSections = () => {
+      const container = document.getElementById('foodSections');
+      container.innerHTML = '';
+
+      Object.keys(foodData).forEach(section => {
+        const secDiv = document.createElement('div');
+        secDiv.className = 'section';
+
+        const title = document.createElement('h2');
+        title.textContent = section;
+        secDiv.appendChild(title);
+
+        const slider = document.createElement('div');
+        slider.className = 'food-container';
+
+        foodData[section].forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'food-card';
+
+          card.innerHTML = `
+            <img src="${item.image}" alt="${item.name}" />
+            <h4>${item.name}</h4>
+            <button class="add-btn" onclick="addToCart('${item.name}')">Add to Cart</button>
+          `;
+          slider.appendChild(card);
+        });
+
+        secDiv.appendChild(slider);
+        container.appendChild(secDiv);
+      });
+    };
+
+    const addToCart = (item) => {
+      cart.push(item);
+      document.getElementById('cartCount').textContent = cart.length;
+    };
+
+    const toggleCart = () => {
+      const modal = document.getElementById('cartModal');
+      const itemList = document.getElementById('cartItems');
+      itemList.innerHTML = '';
+      cart.forEach(item => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        itemList.appendChild(li);
+      });
+      modal.style.display = 'flex';
+    };
+
+    window.onclick = function(e) {
+      if (e.target === document.getElementById('cartModal')) {
+        document.getElementById('cartModal').style.display = 'none';
+      }
+    };
+
+    document.getElementById('searchInput').addEventListener('input', function () {
+      const val = this.value.toLowerCase();
+      document.querySelectorAll('.food-card').forEach(card => {
+        const name = card.querySelector('h4').textContent.toLowerCase();
+        card.style.display = name.includes(val) ? 'block' : 'none';
+      });
+    });
+
+    renderSections();
+  </script>
+</body>
+</html>
+ 
