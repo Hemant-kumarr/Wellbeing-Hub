@@ -17,33 +17,99 @@ body {
   }
   
   /* Navbar */
-  .navbar {
+  header {
+    background: #52B788;
+    padding: 2% 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: white;
+}
+
+.header-container {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #4CAF84;
-    padding: 15px 40px;
-  }
-  
-  .navbar .logo {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .navbar .nav-links {
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+nav ul {
     list-style: none;
-    display: flex;
-    gap: 25px;
-    margin: 0;
     padding: 0;
-  }
-  
-  .navbar .nav-links a {
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 1.5vw;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+nav ul li a:hover{
+    color: #FFDD57;
+}
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 200px;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    border: none;
+    background: #ffc107;
+    color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.auth-links a {
+    margin-left: 1.5vw;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.2vw;
+}
+
+
+/* Authentication Links */
+/* .auth-links {
+    display: flex;
+    gap: 5%;
+} */
+
+.auth-links a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-  }
+    font-size: 1.2vw;
+    transition: color 0.3s;
+}
+
+.auth-links a:hover {
+    color: #FFDD57;
+}
   
   /* Main Container */
   .main-container {
